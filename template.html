@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Incident Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+
+</head>
+
+<body>
+
+    <h1 class="heading1">Incident Report</h1>
+    <div class="sec1">
+        <img class="img" src={{ data[ 'incident'][10] }} alt="Company Logo" style="background-color: {{ data['incident'][8] }};" />
+        <div class="info">
+            <h1 class="h1 h11"> Incident ID : <span>{{ data['incident'][0] }} </span></h1>
+            <h1 class="h1 h22"> Incident Type : <span> {{ data['incident'][7] }} </span></h1>
+        </div>
+    </div>
+
+    <div class="divider">
+        <div class="seprate"></div>
+        <h2 class="h2">Main Details</h2>
+    </div>
+
+
+    <div class="sections">
+
+        <div class="section ">
+
+            <table class="report-table table2">
+                <tr>
+                    <th colspan="2" class="section-title">Reported by</th>
+                </tr>
+                <tr>
+                    <td>Submission Date</td>
+                    <td>{{ data['incident'][2] }}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{ data['incident'][5] }}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{ data['incident'][4] }}</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>{{ data['incident'][6] }}</td>
+                </tr>
+                {% if data['groups'][0] and data['groups'][0][3] and data['groups'][0][1] %}
+                <tr>
+                    <td>{{ data['groups'][0][3] }}</td>
+                    <td>{{ data['groups'][0][1] }}</td>
+                </tr>
+                {% endif %} {% if data['groups'][1] and data['groups'][1][3] and data['groups'][1][1] %}
+                <tr>
+                    <td>{{ data['groups'][1][3] }}</td>
+                    <td>{{ data['groups'][1][1] }}</td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        <div class="section ">
+            <table class="report-table table1">
+                <tr>
+                    <th colspan="2" class="section-title">Location</th>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td> <a href="{{data[ 'google_maps_url']}}" target="_blank"> Open In Live Map   </td>
+                </tr>
+                <tr class="tr-map">
+                    <td colspan="2">
+                        {% if data['map_image_url'] %}
+                            <img class="map" src="{{ data['map_image_url'] }}" />
+                        {% else %}
+                          <p style="color: rgb(126, 126, 126); font-size: 0.7rem; text-align: center;    border: 1px solid #8c82d5; border-radius: 0.8rem; padding: 0.5rem;
+                          ">  There is no location data for this incident </p>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gps </td>
+                    <td >{{ data['gps_coordinates'] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <hr class="hrr">
+
+
+    {% for section in data['sections_info'] %}     {% if section.type == 'fields' %}
+    <div class="section section2">
+        <table class="report-table report2">
+            <thead>
+            <tr>
+                <th colspan="2" class=" t2 section-title">{{ section['title'] }}</th>
+            </tr>
+            <thead>
+            {% for field in section['fields'] %}
+            <tr>
+                <td>{{ field['fieldTitle'] }}</td>
+                <td>{{ field['value'] | safe }}</td> <!-- Use the safe filter to render HTML -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    {% elif section.type == 'media' %}
+    <div class="divider">
+        <div class="seprate"></div>
+        <h2 class="h2">{{ section['title'] }}</h2>
+    </div>
+    <div class="media">
+        {% for media in section['media'] %}
+        <div class="img-med">
+            {% if media['type'] == 'image' %}
+            <img src="{{ media['url'] }}" alt="(Access Denied from the Host)">
+            {% elif media['type'] == 'video' %}
+            <img src="https://logincident-media.s3.eu-west-1.amazonaws.com/icons/video-icon.png" alt="Media video">
+            {% elif media['type'] == 'audio' %}
+            <img src="https://logincident-media.s3.eu-west-1.amazonaws.com/icons/audio-icon.png" alt="Media audio">
+            {% endif %}
+            <div class="in-med">
+                <p class="zz z1"> Media Type : {{ media['type'] }}</p>
+                <p class="zz z2"> <a href="{{ media['url'] }}" target="_blank">
+                    Download Media
+                </a></p>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    </div>
+    {% endif %} {% endfor %}
+    <div class="f"></div>
+    <footer>© Copyright Fining, All rights reserved.</footer>
+</body>
+
+</html>

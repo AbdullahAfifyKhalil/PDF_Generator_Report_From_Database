@@ -1,0 +1,338 @@
+@page {
+    margin: 1.5rem;
+    size: A4 portrait;
+    @bottom-center {
+        content: counter(page);
+    }
+    background-color: #F0F3FF;
+}
+
+html {
+    background-color: #F0F3FF;
+    padding: 0rem;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.heading1 {
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: #492c78;
+    border: 2px solid #240f42;
+    border-radius: 0.6rem;
+    box-shadow: 1px 1px 2px #211951;
+    padding: 1rem;
+    margin-top: 0rem;
+    color: #efecfc;
+}
+
+
+/**/
+
+.sec1 {
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.img {
+    padding: 1rem;
+    width: 19rem;
+    height: 6rem;
+    border: 0.1rem solid #7525a7;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+
+/**/
+
+.info {
+    height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: stretch;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+}
+
+.info .h1 {
+    flex: 1 1;
+    font-size: small;
+    text-align: center;
+    background-color: #75ffda;
+    border: 0.1rem solid #a44bdb;
+    border-radius: 0.6rem;
+    box-shadow: 1px 1px 2px #211951;
+    padding: 0.4rem;
+    height: 3.5rem;
+    width: 23rem;
+    color: #33286f;
+    line-height: 2.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.h11 {
+    margin-top: 0;
+}
+
+.info .h1 span {
+    color: rgb(158, 64, 64);
+}
+
+
+/**/
+
+.divider {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.divider .seprate {
+    margin: 1rem 0;
+    width: 100%;
+    margin: auto;
+    height: 0.1rem;
+    border-radius: 1rem;
+    background-color: #4d915d;
+}
+
+.divider .h2 {
+    width: 20%;
+    position: absolute;
+    right: 39%;
+    margin-top: -1.2rem;
+    text-align: center;
+    padding: 1%;
+    border-radius: 1rem;
+    font-size: 1rem;
+    background-color: #F0F3FF;
+    border-left: 0.1rem solid #4d915d;
+    border-right: 0.1rem solid #4d915d;
+    color: #575555;
+}
+
+
+/**/
+
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-flow: wrap;
+    gap: 1rem;
+}
+
+.section {
+    width: 49%;
+    height: 100%;
+    flex: 1 1 49%;
+    flex-grow: inherit;
+    margin-top: 1.5rem;
+    min-height: 24rem;
+    border: 1px solid #4affcf;
+    background-color: #f6fdfb;
+    border-radius: 0.4rem;
+}
+
+.section2 {
+    width: 100%;
+    border: 0;
+    min-height: auto;
+    background-color: transparent;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    height: 100%;
+    min-height: 22rem;
+}
+
+table a {
+    color: #8637b8;
+    text-decoration: none;
+}
+
+table .map {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    border-radius: 0.8rem;
+    border: 1px solid #8c82d5;
+}
+
+.report-table th,
+.report-table td {
+    padding: 0.8rem;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+}
+
+.report2 th,
+.report2 td {
+    border: 1px solid #d3d3d3;
+}
+
+.report-table th {
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.report-table tr:last-child td:first-child {
+    border-bottom-left-radius: 0.4rem;
+}
+
+.report-table tr:last-child td:last-child {
+    border-bottom-right-radius: 0.4rem;
+}
+
+.report-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.report-table tr:hover {
+    background-color: #ddd;
+}
+
+.report-table th {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    background-color: #211951;
+    color: #daf773;
+    font-size: 1rem;
+}
+
+.report2 th {
+    color: #fffffd;
+}
+
+.report-table .t2 {
+    background-color: #675bab;
+}
+
+.hrr {
+    margin: 1.5rem auto;
+    height: 0;
+    border-bottom: 1px #ada1f1 solid;
+    width: 75%;
+}
+
+
+/**/
+
+.media {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 100vh;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin: auto;
+    text-align: center;
+}
+
+.img-med {
+    margin-top: 1rem;
+    flex: 1 1 32%;
+    box-sizing: border-box;
+    height: min-content;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.media .img-med img {
+    page-break-inside: avoid;
+    width: 93%;
+    max-width: 23rem;
+    height: 11.8rem;
+    border: 1px solid rgb(21, 5, 29);
+    height: fit-content;
+    border-radius: 0.4rem;
+    display: block;
+    margin: auto;
+    font-size: 0.8;
+    align-items: center;
+    font-style: italic;
+    color: rgb(232, 101, 101);
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.in-med {
+    display: flex;
+    justify-content: center;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.zz {
+    border: 2px solid #8c82d5;
+    border-radius: 0.8rem;
+    text-align: center;
+    width: 48%;
+    max-width: 12.5rem;
+    padding: 0.5rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.z1 {
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+.z2 {
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+.media .img-med a {
+    text-decoration: none;
+    color: #8c82d5;
+    font-weight: bold;
+}
+
+
+/**/
+
+.f {
+    height: 3rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    color: rgb(109, 109, 109);
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+}
